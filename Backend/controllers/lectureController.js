@@ -1,4 +1,4 @@
-const Lecture = require('../models/Lecture');
+const Lecture = require('../models/Lecture.model');
 
 // Create a new lecture
 createLecture = async (req, res) => {
