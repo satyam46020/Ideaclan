@@ -14,10 +14,10 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/courses', courseRoutes);
-app.use('/api/lectures', lectureRoutes);
-app.use('/api/users', userRoutes);
+app.use('/auth', authRoutes);
+app.use('/courses', courseRoutes);
+app.use('/lectures', lectureRoutes);
+app.use('/users', userRoutes);
 
 const PORT = process.env.PORT || 5000;
 
