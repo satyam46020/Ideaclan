@@ -45,4 +45,4 @@ getCourseById = async (req, res) => {
   }
 };
 
-module.exports={createCourse,getAllCourses,getCourseById}
+module.exports = { createCourse, getAllCourses, getCourseById }

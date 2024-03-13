@@ -1,10 +1,12 @@
 const express = require('express');
-const router = express.Router();
+
 const lectureController = require('../controllers/lectureController');
-const adminAuth = require('../middleware/adminMiddleware');
+const auth = require('../middleware/authMiddleware');
 
-router.post('/', adminAuth ,lectureController.createLecture);
+const router = express.Router();
 
-router.get('/:courseId', lectureController.getAllLecturesByCourseId);
+router.post('/', auth("admin") ,lectureController.createLecture);
+
+router.get('/:courseId', auth("default") ,lectureController.getAllLecturesByCourseId);
 
 module.exports = router;

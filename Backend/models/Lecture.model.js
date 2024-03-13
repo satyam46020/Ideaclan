@@ -1,5 +1,3 @@
-// Lecture.js
-
 const mongoose = require('mongoose');
 
 const LectureSchema = mongoose.Schema({
@@ -29,6 +27,6 @@ const LectureSchema = mongoose.Schema({
   },
 });
 
-const Lecturemodel=mongoose.model('Lecture', LectureSchema);
+const Lecturemodel = mongoose.model('Lecture', LectureSchema);
 
 module.exports = Lecturemodel

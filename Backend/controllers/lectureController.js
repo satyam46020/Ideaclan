@@ -34,4 +34,4 @@ getAllLecturesByCourseId = async (req, res) => {
   }
 };
 
-module.exports={createLecture,getAllLecturesByCourseId}
+module.exports = { createLecture, getAllLecturesByCourseId }

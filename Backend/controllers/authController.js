@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+
 const User = require('../models/User.model');
 
 registerUser = async (req, res) => {
@@ -73,4 +74,4 @@ loginUser = async (req, res) => {
   }
 };
 
-module.exports={registerUser,loginUser}
+module.exports = { registerUser, loginUser }

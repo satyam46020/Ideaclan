@@ -1,11 +1,14 @@
 const express = require('express');
-const router = express.Router();
+
 const courseController = require('../controllers/courseController');
+const auth = require('../middleware/authMiddleware');
 
-router.post('/', courseController.createCourse);
+const router = express.Router();
 
-router.get('/', courseController.getAllCourses);
+router.post('/', auth("admin") , courseController.createCourse);
 
-router.get('/:id', courseController.getCourseById);
+router.get('/', auth("default") , courseController.getAllCourses);
+
+router.get('/:id', auth("default") , courseController.getCourseById);
 
 module.exports = router;

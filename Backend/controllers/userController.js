@@ -25,4 +25,4 @@ getAllUsers = async (req, res) => {
   }
 };
 
-module.exports={getUserById,getAllUsers}
+module.exports = { getUserById, getAllUsers }
