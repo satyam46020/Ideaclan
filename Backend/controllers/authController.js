@@ -12,7 +12,6 @@ registerUser = async (req, res) => {
       return res.status(400).json({ msg: 'User already exists' });
     }
 
-    // Create new user
     user = new User({
       username,
       email,
