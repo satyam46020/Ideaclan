@@ -14,13 +14,13 @@ import {
 export const fetchAdminDashboardData = (token, page = 1, limit = 10) => {
   return async (dispatch) => {
     try {
-      const response1 = await axios.get(`http://localhost:5000/users?page=${page}&limit=${limit}`, {
+      const response1 = await axios.get(`https://ideaclan-6lrr.onrender.com/users?page=${page}&limit=${limit}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
       });
 
-      const response2 = await axios.get('http://localhost:5000/courses', {
+      const response2 = await axios.get('https://ideaclan-6lrr.onrender.com/courses', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -52,7 +52,7 @@ export const fetchAdminDashboardData = (token, page = 1, limit = 10) => {
 export const createUser = (userData, token) => {
   return async (dispatch) => {
     try {
-      const response = await axios.post('http://localhost:5000/users', userData, {
+      const response = await axios.post('https://ideaclan-6lrr.onrender.com/users', userData, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -70,7 +70,7 @@ export const createUser = (userData, token) => {
 export const updateUser = ( updatedUserData, token) => {
   return async (dispatch) => {
     try {
-      const response = await axios.patch(`http://localhost:5000/users/${updatedUserData._id}`, updatedUserData, {
+      const response = await axios.patch(`https://ideaclan-6lrr.onrender.com/users/${updatedUserData._id}`, updatedUserData, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -88,7 +88,7 @@ export const updateUser = ( updatedUserData, token) => {
 export const deleteUser = (userId, token) => {
   return async (dispatch) => {
     try {
-      await axios.delete(`http://localhost:5000/users/${userId}`, {
+      await axios.delete(`https://ideaclan-6lrr.onrender.com/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }

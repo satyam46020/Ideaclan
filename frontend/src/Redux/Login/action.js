@@ -3,7 +3,7 @@ import { FETCH_TOKEN_SUCCESS, FETCH_TOKEN_FAILURE } from './actiontypes';
 
 export const loginUser = (formData) => async (dispatch) => {
   try {
-    const response = await axios.post('http://localhost:5000/auth/login', formData); 
+    const response = await axios.post('https://ideaclan-6lrr.onrender.com/auth/login', formData); 
     const data = response.data;
     console.log(data);
     dispatch({
