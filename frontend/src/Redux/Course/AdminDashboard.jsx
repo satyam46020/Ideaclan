@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteUser, fetchAdminDashboardData, updateUser } from '../Redux/AdminDashboard/action'; // Import updateUser action
+import { createUser, deleteUser, fetchAdminDashboardData, updateUser } from '../Redux/AdminDashboard/action'; // Import updateUser action
 import { Box, Button, Flex, Img, Input, Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton, Table, Tbody, Td, Text, Th, Thead, Tr } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
 

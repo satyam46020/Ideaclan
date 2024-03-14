@@ -23,7 +23,7 @@ const LoginPage = () => {
   });
   const [showAlert, setShowAlert] = useState(false); 
 
-  const token=useSelector(state=>state.loginReducer.token)
+  const {token,role}=useSelector(state=>state.loginReducer)
   const dispatch=useDispatch();
   const navigate=useNavigate();
   const { email, password } = formData;
@@ -36,11 +36,16 @@ const LoginPage = () => {
     e.preventDefault();
     dispatch(loginUser(formData));
     if(!token){
+      
       setShowAlert(true);
     }
-    else{
-      navigate("/signup")
-    }
+    else if (role=="admin"){
+       navigate("/admin-dashboard")
+      }
+      else{
+        navigate("/")
+      }
+    
   };
 
   return (
@@ -70,9 +75,9 @@ const LoginPage = () => {
               required
             />
           </FormControl>
-          <Button colorScheme="blue" type="submit" mt={10}>
-            Login
-          </Button>
+          <Input bgColor={'blue'} color="white" type="submit" value={"Login"} mt={10}/>
+            {/* Login
+          </Input> */}
           {showAlert && (
             <Alert status="error" mt="4">
               <AlertIcon />

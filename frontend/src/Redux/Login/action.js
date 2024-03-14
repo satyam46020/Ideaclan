@@ -4,11 +4,11 @@ import { FETCH_TOKEN_SUCCESS, FETCH_TOKEN_FAILURE } from './actiontypes';
 export const loginUser = (formData) => async (dispatch) => {
   try {
     const response = await axios.post('http://localhost:5000/auth/login', formData); 
-    const token = response.data.token;
-    console.log(token);
+    const data = response.data;
+    console.log(data);
     dispatch({
       type: FETCH_TOKEN_SUCCESS,
-      payload: token,
+      payload: data,
     });
   } catch (error) {
     dispatch({
